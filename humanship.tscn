@@ -20,10 +20,11 @@ surfaces/0 = {
 "vertex_count": 6478
 }
 
-[sub_resource type="SphereShape" id=2]
+[sub_resource type="CylinderShape" id=2]
 
 margin = 0.04
-radius = 2.44518
+radius = 2.1
+height = 2.5
 
 [node name="humanship" type="KinematicBody" groups=[
 "enemy",
