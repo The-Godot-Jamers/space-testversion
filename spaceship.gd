@@ -7,7 +7,10 @@ var accel = 3
 var direction
 var missiles = 1
 
-
+func laser_hit():
+	#You hit someone else with your laser
+	$hit_progress.progress(1)
+	
 
 func _physics_process(delta):
 	var rot = Vector3()
