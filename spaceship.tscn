@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://spaceship.gd" type="Script" id=1]
 [ext_resource path="res://missile.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://sprites/progress_box.png" type="Texture" id=11]
 [ext_resource path="res://sprites/progress_texture.png" type="Texture" id=12]
 [ext_resource path="res://hit_progress.gd" type="Script" id=13]
+[ext_resource path="res://top_camera_system.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ArrayMesh" id=1]
 
@@ -527,5 +528,7 @@ process_mode = 1
 wait_time = 0.5
 one_shot = false
 autostart = true
+
+[node name="top_camera_system" parent="." instance=ExtResource( 14 )]
 
 [connection signal="timeout" from="hit_progress/reset_timer" to="hit_progress" method="_on_reset_timer_timeout"]
