@@ -22,3 +22,7 @@ func progress(amt):
 func _on_reset_timer_timeout():
 	visible = false
 	value = 0
+
+func reset():
+	visible = false
+	value = 0

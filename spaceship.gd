@@ -32,7 +32,7 @@ func _physics_process(delta):
 	direction = direction.normalized()
 	var target = direction * speed
 	velocity = velocity.linear_interpolate(target,accel * delta)
-	move_and_slide(velocity)
+	velocity = move_and_slide(velocity)
 	
 	if Input.is_action_pressed("ui_accept"):
 		$laser.shoot()

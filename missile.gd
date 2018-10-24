@@ -1,7 +1,7 @@
 extends Spatial
 
 var speed = 30
-var shot = false
+var was_shot = false
 var active = false
 var forward
 
@@ -12,12 +12,12 @@ func fire():
 	set_as_toplevel(true)
 	forward = get_transform().basis.z.normalized();
 func _physics_process(delta):
-	if shot:
+	if was_shot:
 		translation -= forward * speed * delta
 
 func _on_Area_body_entered(body):
 	if active:
-		shot = false
+		was_shot = false
 		#body.take_hit()
 		$AnimationPlayer.play("hit")
 
@@ -30,4 +30,4 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		active = true
 
 func shot():
-	shot = true
+	was_shot = true

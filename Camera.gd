@@ -12,7 +12,6 @@ var pitch = 0.0
 var total_yaw = 0.0
 var total_pitch = 0.0
 
-var direction = Vector3(0.0, 0.0, 0.0)
 
 func _input(event):
 	if event is InputEventMouseMotion && Input.is_action_pressed("mouse_right"):
