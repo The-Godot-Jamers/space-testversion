@@ -2,8 +2,9 @@ extends Spatial
 
 
 func _on_Area_body_entered(body):
-	#Fire portal action 
-	print("portal action")
+	var group = get_tree().get_nodes_in_group("player")
+	for i in group:
+		i.do_stargate()
 
 func activate():
 	$AnimationPlayer.play("stargate")

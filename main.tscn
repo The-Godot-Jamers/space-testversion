@@ -8,7 +8,9 @@
 [node name="main" type="Node"]
 script = ExtResource( 1 )
 
-[node name="spaceship" parent="." instance=ExtResource( 2 )]
+[node name="spaceship" parent="." groups=[
+"player",
+] instance=ExtResource( 2 )]
 
 [node name="humanship" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.0944 )
@@ -17,5 +19,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.0944 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.06809, 0, -10.0944 )
 
 [node name="stargate" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5763, 0, -18.1254 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.576, 0, -10 )
+_sections_unfolded = [ "Transform" ]
 

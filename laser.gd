@@ -10,7 +10,7 @@ func shoot():
 	if $RayCast.is_colliding():
 		draw.add_vertex(Vector3(0.0, 0.0, to_local($RayCast.get_collision_point()).z))
 		#$RayCast.get_collider().take_hit()
-		get_parent().laser_hit()
+		get_parent().laser_hit($RayCast.get_collider())
 		$Particles.emitting = true
 		$Particles.translation = Vector3(0.0, 0.0, to_local($RayCast.get_collision_point()).z) 
 	else:

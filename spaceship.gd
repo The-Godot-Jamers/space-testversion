@@ -7,10 +7,13 @@ var accel = 3
 var direction
 var missiles = 1
 
-func laser_hit():
+func do_stargate():
+	$AnimationPlayer.play("stargate")
+
+func laser_hit(who):
 	#You hit someone else with your laser
-	$hit_progress.progress(1)
-	
+	if who != null && who.is_in_group("enemy"):
+		$hit_progress.progress(1)
 
 func _physics_process(delta):
 	var rot = Vector3()
@@ -41,8 +44,7 @@ func _physics_process(delta):
 		$laser.dont_shoot()
 		$laser2.dont_shoot()
 	if Input.is_action_pressed("mouse_left") && missiles > 0:
-		var missile = $missile
-		missile.fire()
+		$missile.fire()
 		missiles -= 1
 
 
