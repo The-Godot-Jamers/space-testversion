@@ -509,6 +509,7 @@ _sections_unfolded = [ "Light" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.34431 )
 
 [node name="enemy_pointer" type="Position3D" parent="."]
+editor/display_folded = true
 script = ExtResource( 10 )
 
 [node name="MeshInstance" type="MeshInstance" parent="enemy_pointer"]
@@ -528,6 +529,7 @@ material/0 = SubResource( 11 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="hit_progress" type="TextureProgress" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5

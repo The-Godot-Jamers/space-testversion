@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/alien-drone-_01.dae-1ba838d3913d0e947ea4e599eec008ec.scn"
+path="res://.import/alien-drone-1c.dae-ad703c838523973a41f2dcf4ea99657d.scn"
 
 [deps]
 
-source_file="res://models/alien_drone/alien-drone-_01.dae"
-dest_files=[ "res://.import/alien-drone-_01.dae-1ba838d3913d0e947ea4e599eec008ec.scn" ]
+source_file="res://models/alien_drone/alien-drone-1c.dae"
+dest_files=[ "res://.import/alien-drone-1c.dae-ad703c838523973a41f2dcf4ea99657d.scn" ]
 
 [params]
 
