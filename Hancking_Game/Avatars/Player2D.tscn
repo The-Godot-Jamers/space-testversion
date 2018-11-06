@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Hancking_Game/Avatars/Player2D.gd" type="Script" id=1]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip1.png" type="Texture" id=2]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip2.png" type="Texture" id=3]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip2AI.png" type="Texture" id=4]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip3.png" type="Texture" id=5]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/Turret1.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Player2D" type="KinematicBody2D"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+motion/sync_to_physics = false
+script = ExtResource( 1 )
+_sections_unfolded = [ "Script" ]
+Bullet = null
+speed = null
+rotation_speed = null
+gun_cooldown = null
+health = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+rotation = 1.57175
+frames = SubResource( 1 )
+animation = "default"
+frame = 3
+playing = true
+_sections_unfolded = [ "frames" ]
+
+[node name="HPBody" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Turret" type="AnimatedSprite" parent="."]
+position = Vector2( -52.8758, 0.145382 )
+rotation = 1.57413
+scale = Vector2( 0.550648, 0.550648 )
+frames = SubResource( 3 )
+animation = "default"
+offset = Vector2( 0, -30 )
+_sections_unfolded = [ "Script", "frames" ]
+
+[node name="Muzzle" type="Position2D" parent="Turret"]
+position = Vector2( 0.12955, -137.888 )
+
+[node name="GunTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+_sections_unfolded = [ "Script" ]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+

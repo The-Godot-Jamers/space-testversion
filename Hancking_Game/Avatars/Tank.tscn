@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Hancking_Game/Avatars/Tank.gd" type="Script" id=1]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip1AI.png" type="Texture" id=2]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip2AI.png" type="Texture" id=3]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip3AI.png" type="Texture" id=4]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/Turret1AI.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Player2D" type="KinematicBody2D"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+motion/sync_to_physics = false
+script = ExtResource( 1 )
+_sections_unfolded = [ "Script" ]
+__meta__ = {
+"_edit_group_": true
+}
+Bullet = null
+speed = null
+rotation_speed = null
+gun_cooldown = null
+health = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "default"
+frame = 3
+playing = true
+_sections_unfolded = [ "frames" ]
+
+[node name="HPBody" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( -0.284393, 52.5805 )
+rotation = -0.000372451
+scale = Vector2( 0.550648, 0.550648 )
+frames = SubResource( 3 )
+animation = "default"
+offset = Vector2( 0, -30 )
+_sections_unfolded = [ "Script", "frames" ]
+
+[node name="Muzzle" type="Position2D" parent="AnimatedSprite2"]
+position = Vector2( 0.12955, -137.888 )
+
+[node name="GunTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 1.33
+one_shot = false
+autostart = true
+_sections_unfolded = [ "Pause", "Script" ]
+
