@@ -3,6 +3,7 @@ extends Node
 var enemy = preload("res://humanship.tscn")
 var bot = preload("res://robot_1.tscn")
 var gate = preload("res://stargate.tscn")
+var scene2d = "res://2ddummy.tscn"
 
 func _input(event):
 	#esc to quit
@@ -11,6 +12,10 @@ func _input(event):
 	#shift-tab to reload scene
 	if Input.is_action_just_pressed("ui_focus_prev"):
 		get_tree().reload_current_scene()
+
+func transition():
+	transition.path = scene2d
+	transition.transition_in()
 
 func _ready():
 	randomize()

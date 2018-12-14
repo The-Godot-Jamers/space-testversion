@@ -17,6 +17,10 @@ _global_script_class_icons={
 
 run/main_scene="res://main.tscn"
 
+[autoload]
+
+transition="*res://transition.tscn"
+
 [input]
 
 ui_left={
