@@ -31,7 +31,7 @@ func random_map():
 	print("random_map")
 	#clear enemies make new ones
 	for i in get_children():
-		if i.is_in_group("player"):
+		if i.is_in_group("player") or i.is_in_group("environment"):
 			pass
 		else:
 			i.queue_free()
