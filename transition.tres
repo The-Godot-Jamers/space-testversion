@@ -7,4 +7,5 @@
 render_priority = 1
 shader = ExtResource( 1 )
 shader_param/value = 0.0
+shader_param/NUM_OCTAVES = 5
 
