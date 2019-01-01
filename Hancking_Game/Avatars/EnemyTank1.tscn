@@ -1,18 +1,24 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Hancking_Game/Avatars/Player2D.gd" type="Script" id=1]
-[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip1AI.png" type="Texture" id=2]
-[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip2AI.png" type="Texture" id=3]
-[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip3AI.png" type="Texture" id=4]
-[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/Turret1AI.png" type="Texture" id=5]
+[ext_resource path="res://Hancking_Game/Avatars/EnemyTank1.gd" type="Script" id=1]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip1.png" type="Texture" id=2]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip2.png" type="Texture" id=3]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip2AI.png" type="Texture" id=4]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip3.png" type="Texture" id=5]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/Turret1.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
-"speed": 4.0
+"speed": 8.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -21,7 +27,7 @@ animations = [ {
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -29,10 +35,10 @@ animations = [ {
 
 [node name="Player2D" type="KinematicBody2D"]
 script = ExtResource( 1 )
-max_speed = 500
-rotation_speed = 1.0
+max_speed = 300
+rotation_speed = 12.0
 gun_cooldown = 12.0
-health = 12
+health = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 1.57175
