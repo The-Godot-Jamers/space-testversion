@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Hancking_Game/Avatars/EnemyTank1.gd" type="Script" id=1]
 [ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip1.png" type="Texture" id=2]
@@ -21,7 +21,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=2]
 
 
 [sub_resource type="SpriteFrames" id=3]
@@ -33,31 +33,38 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Player2D" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=4]
+
+
+[node name="EnemyTank1" type="KinematicBody2D"]
 script = ExtResource( 1 )
-max_speed = 300
-rotation_speed = 12.0
-gun_cooldown = 12.0
-health = 2
+max_speed = 0
+health = 100
+turret_speed = 20.0
+detect_radius = 400
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 1.57175
 frames = SubResource( 1 )
-frame = 3
+frame = 4
 playing = true
 
-[node name="HPBody" type="CollisionShape2D" parent="."]
+[node name="DetectRadius" type="Area2D" parent="."]
+rotation = 1.57175
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRadius"]
+light_mask = 0
+rotation = -7.45058e-011
+scale = Vector2( 50, 50 )
 shape = SubResource( 2 )
 
 [node name="Turret" type="AnimatedSprite" parent="."]
-position = Vector2( -52.8758, 0.145382 )
-rotation = 1.57413
+position = Vector2( -50.678, -0.0913639 )
+rotation = 0.000872648
 scale = Vector2( 0.550648, 0.550648 )
 frames = SubResource( 3 )
-offset = Vector2( 0, -30 )
-__meta__ = {
-"_edit_lock_": true
-}
+offset = Vector2( 26.7922, 0.168322 )
 
 [node name="Muzzle" type="Position2D" parent="Turret"]
 position = Vector2( 0.12955, -137.888 )
@@ -68,3 +75,8 @@ autostart = true
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
+[node name="HPBody" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="DetectRadius" to="." method="_on_DetectRadius_body_entered"]
+[connection signal="body_exited" from="DetectRadius" to="." method="_on_DetectRadius_body_exited"]

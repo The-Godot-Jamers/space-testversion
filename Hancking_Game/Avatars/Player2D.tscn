@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Hancking_Game/Avatars/Player2D.gd" type="Script" id=1]
 [ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip1AI.png" type="Texture" id=2]
@@ -6,7 +6,10 @@
 [ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip3AI.png" type="Texture" id=4]
 [ext_resource path="res://Hancking_Game/Assets/Hack Avatars/Turret1AI.png" type="Texture" id=5]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+
+
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
@@ -15,10 +18,10 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=4]
 
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
@@ -34,27 +37,30 @@ rotation_speed = 1.0
 gun_cooldown = 12.0
 health = 12
 
+[node name="Player2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+rotation = 1.57175
+scale = Vector2( 9.26266, 7.0038 )
+shape = SubResource( 1 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 1.57175
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 frame = 3
 playing = true
 
 [node name="HPBody" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Turret" type="AnimatedSprite" parent="."]
-position = Vector2( -52.8758, 0.145382 )
-rotation = 1.57413
+position = Vector2( -51.5291, -2.02039 )
+rotation = -0.000715166
 scale = Vector2( 0.550648, 0.550648 )
-frames = SubResource( 3 )
-offset = Vector2( 0, -30 )
-__meta__ = {
-"_edit_lock_": true
-}
+frames = SubResource( 4 )
+offset = Vector2( 27.9183, 3.28377 )
 
 [node name="Muzzle" type="Position2D" parent="Turret"]
-position = Vector2( 0.12955, -137.888 )
+position = Vector2( 155.095, 2.23505 )
 
 [node name="GunTimer" type="Timer" parent="."]
 autostart = true
