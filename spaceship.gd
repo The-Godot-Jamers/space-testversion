@@ -8,6 +8,8 @@ var direction
 var missiles = 1
 var hitpoints = 100
 
+signal get_hit(damage) #signal to ui
+
 func do_stargate():
 	$AnimationPlayer.play("stargate")
 
@@ -54,5 +56,6 @@ func in_portal():
 	
 func take_hit(amt):
 	hitpoints -= amt
+	emit_signal("get_hit",amt)
 	if hitpoints <= 0:
 		print("you died")
