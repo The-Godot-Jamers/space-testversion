@@ -20,6 +20,7 @@ run/main_scene="res://main.tscn"
 [autoload]
 
 transition="*res://transition.tscn"
+globals="*res://globals.tscn"
 
 [input]
 

@@ -20,12 +20,12 @@ func transition():
 func _ready():
 	randomize()
 	#creating enemies
-	var i = enemy.instance()
-	i.translation = Vector3(rand_range(-50.0, 50.0), 0.0, rand_range(-50.0, 50.0))
-	add_child(i)
-	i = enemy.instance()
-	i.translation = Vector3(rand_range(-50.0, 50.0), 0.0, rand_range(-50.0, 50.0))
-	add_child(i)
+#	var i = enemy.instance()
+#	i.translation = Vector3(rand_range(-50.0, 50.0), 0.0, rand_range(-50.0, 50.0))
+#	add_child(i)
+#	i = enemy.instance()
+#	i.translation = Vector3(rand_range(-50.0, 50.0), 0.0, rand_range(-50.0, 50.0))
+#	add_child(i)
 	var b = bot.instance()
 	b.translation = Vector3(rand_range(-50.0, 50.0), 0.0, rand_range(-50.0, 50.0))
 	add_child(b)

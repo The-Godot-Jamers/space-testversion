@@ -10,6 +10,9 @@ var hitpoints = 100
 
 signal get_hit(damage) #signal to ui
 
+func _ready():
+	globals.player = self
+
 func do_stargate():
 	$AnimationPlayer.play("stargate")
 
