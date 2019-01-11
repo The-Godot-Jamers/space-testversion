@@ -3,7 +3,7 @@ extends Node
 var enemy = preload("res://humanship.tscn")
 var bot = preload("res://robot_1.tscn")
 var gate = preload("res://stargate.tscn")
-var scene2d = "res://2ddummy.tscn"
+var scene2d = "res://Hancking_Game/Test_Map.tscn"
 
 func _input(event):
 	#esc to quit
