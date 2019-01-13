@@ -27,10 +27,18 @@ func _physics_process(delta):
 func _on_laser_timer_timeout():
 	if translation.distance_to(target.translation) < 20:
 		var laser = piupiu.instance()
-		laser.translation = translation
+		laser.translation = to_global($piupiu_left.translation)
 		laser.shooter = self
 		laser.rotation.y = rotation.y - deg2rad(180)
 		get_parent().add_child(laser)
+		
+		laser = piupiu.instance()
+		laser.translation = to_global($piupiu_right.translation)
+		laser.shooter = self
+		laser.rotation.y = rotation.y - deg2rad(180)
+		get_parent().add_child(laser)
+		
+		
 		$AnimationPlayer.play("Shot")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
