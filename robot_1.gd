@@ -6,9 +6,17 @@ var move_speed = 5
 var velocity = Vector3()
 var accel = 3
 var rot_speed = 2
+var hitpoints = 10
+
+func take_hit(amt):
+	hitpoints -= amt
+	if hitpoints <= 0:
+		#dying needs to be changed for better
+		queue_free()
 
 func _ready():
 	target = globals.player
+	$laser_timer.wait_time += rand_range(-0.2, 0.2)
 
 func _physics_process(delta):
 	

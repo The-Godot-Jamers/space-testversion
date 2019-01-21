@@ -26,9 +26,12 @@ func _ready():
 #	i = enemy.instance()
 #	i.translation = Vector3(rand_range(-50.0, 50.0), 0.0, rand_range(-50.0, 50.0))
 #	add_child(i)
-	var b = bot.instance()
-	b.translation = Vector3(rand_range(-50.0, 50.0), 0.0, rand_range(-50.0, 50.0))
-	add_child(b)
+	
+	for i in 5:
+		var b = bot.instance()
+		b.translation = Vector3(rand_range(-50.0, 50.0), 0.0, rand_range(-50.0, 50.0))
+		add_child(b)
+	
 	var g = gate.instance()
 	g.translation = Vector3(rand_range(-50.0, 50.0), 0.0, rand_range(-50.0, 50.0))
 	add_child(g)
