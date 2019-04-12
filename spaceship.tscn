@@ -608,7 +608,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 1, 1, 1, 0 )
+color = Color( 1, 1, 1, 0.19145 )
 _sections_unfolded = [ "Material", "material" ]
 
 [connection signal="timeout" from="hit_progress/reset_timer" to="hit_progress" method="_on_reset_timer_timeout"]

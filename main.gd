@@ -1,7 +1,7 @@
 extends Node
 
 var enemy = preload("res://humanship.tscn")
-var bot = preload("res://robot_1.tscn")
+var bot = preload("res://test-drone-character.tscn")
 var gate = preload("res://stargate.tscn")
 
 func _input(event):
