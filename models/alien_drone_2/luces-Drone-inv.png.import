@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/luces-Drone-inv.png-bb8c7e30876e987a017ab2b662b8c162.s3tc.stex"
 path.etc2="res://.import/luces-Drone-inv.png-bb8c7e30876e987a017ab2b662b8c162.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
 
 [deps]
 
