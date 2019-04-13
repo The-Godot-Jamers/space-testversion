@@ -6,10 +6,6 @@
 [node name="Scene Root" index="0" instance=ExtResource( 1 )]
 
 [node name="asteroid-05--low" parent="." index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.3865 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4493 )
 material/0 = ExtResource( 2 )
-
-[node name="OmniLight" type="OmniLight" parent="asteroid-05--low" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.60709, 1.33401 )
-light_energy = 2.26
 
