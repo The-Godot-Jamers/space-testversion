@@ -1,0 +1,14 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://models/asteroids/textures/rock_05_diff_1k.jpg" type="Texture" id=1]
+[ext_resource path="res://models/asteroids/textures/rock_05_nor_1k.jpg" type="Texture" id=2]
+[ext_resource path="res://models/asteroids/textures/rock_05_rough_1k.jpg" type="Texture" id=3]
+
+[resource]
+albedo_texture = ExtResource( 1 )
+metallic = 0.47
+roughness_texture = ExtResource( 3 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 2 )
+

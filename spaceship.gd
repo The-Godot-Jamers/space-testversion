@@ -47,4 +47,7 @@ func _physics_process(delta):
 		$missile.fire()
 		missiles -= 1
 
-
+func in_portal():
+	print("in portal")
+	get_parent().random_map()
+	

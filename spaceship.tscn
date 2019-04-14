@@ -349,6 +349,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "in_portal"
+} ]
+}
 
 [sub_resource type="Shader" id=13]
 
@@ -509,6 +523,7 @@ _sections_unfolded = [ "Light" ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.34431 )
 
 [node name="enemy_pointer" type="Position3D" parent="."]
+editor/display_folded = true
 script = ExtResource( 10 )
 
 [node name="MeshInstance" type="MeshInstance" parent="enemy_pointer"]
@@ -528,6 +543,7 @@ material/0 = SubResource( 11 )
 _sections_unfolded = [ "Transform", "material" ]
 
 [node name="hit_progress" type="TextureProgress" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
@@ -592,7 +608,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 1, 1, 1, 0.0247194 )
+color = Color( 1, 1, 1, 0.19145 )
 _sections_unfolded = [ "Material", "material" ]
 
 [connection signal="timeout" from="hit_progress/reset_timer" to="hit_progress" method="_on_reset_timer_timeout"]
