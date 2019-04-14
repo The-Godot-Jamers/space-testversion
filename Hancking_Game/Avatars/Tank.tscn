@@ -22,8 +22,6 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=2]
 
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
 
 [sub_resource type="SpriteFrames" id=3]
 
@@ -35,28 +33,14 @@ animations = [ {
 } ]
 
 [node name="Player2D" type="KinematicBody2D"]
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-motion/sync_to_physics = false
 script = ExtResource( 1 )
-_sections_unfolded = [ "Script" ]
 __meta__ = {
 "_edit_group_": true
 }
-Bullet = null
-speed = null
-rotation_speed = null
-gun_cooldown = null
-health = null
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "default"
-frame = 3
 playing = true
-_sections_unfolded = [ "frames" ]
 
 [node name="HPBody" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
@@ -66,17 +50,12 @@ position = Vector2( -0.284393, 52.5805 )
 rotation = -0.000372451
 scale = Vector2( 0.550648, 0.550648 )
 frames = SubResource( 3 )
-animation = "default"
 offset = Vector2( 0, -30 )
-_sections_unfolded = [ "Script", "frames" ]
 
 [node name="Muzzle" type="Position2D" parent="AnimatedSprite2"]
 position = Vector2( 0.12955, -137.888 )
 
 [node name="GunTimer" type="Timer" parent="."]
-process_mode = 1
 wait_time = 1.33
-one_shot = false
 autostart = true
-_sections_unfolded = [ "Pause", "Script" ]
 

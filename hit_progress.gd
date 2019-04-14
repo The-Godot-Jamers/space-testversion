@@ -18,6 +18,7 @@ func progress(amt):
 		print("reached max on progress bar") 
 		visible = false
 		value = 0
+		get_parent().get_parent().transition()
 
 func _on_reset_timer_timeout():
 	visible = false
