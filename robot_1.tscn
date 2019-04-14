@@ -1,9 +1,12 @@
+
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://robot_1.gd" type="Script" id=1]
+
 [ext_resource path="res://models/alien_drone/Texture.material" type="Material" id=2]
 [ext_resource path="res://models/alien_drone/eyes.material" type="Material" id=3]
 [ext_resource path="res://models/alien_drone/body-lights.material" type="Material" id=4]
+
 
 [sub_resource type="ArrayMesh" id=1]
 
@@ -323,6 +326,8 @@ tracks/6/keys = PoolRealArray( 0, 1, 0, 0, 5.96046e-008, 0, 0, 0, 1, 1, 1, 1, 2.
 
 [sub_resource type="Animation" id=7]
 
+
+resource_name = "Shot"
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -350,6 +355,7 @@ tracks/1/keys = {
 "values": [ 0.0, 1.0, 0.0 ]
 }
 
+
 [sub_resource type="CylinderShape" id=8]
 
 radius = 0.95
@@ -362,40 +368,10 @@ script = ExtResource( 1 )
 [node name="Armature" type="Spatial" parent="."]
 transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 0 )
 
-[node name="Skeleton" type="Skeleton" parent="Armature"]
-bones/0/name = "base"
-bones/0/parent = -1
-bones/0/rest = Transform( 1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.187177, 0 )
-bones/0/enabled = true
-bones/0/bound_children = [  ]
-bones/1/name = "cabeza"
-bones/1/parent = 0
-bones/1/rest = Transform( 1, 2.38419e-007, 0, -2.38419e-007, 1, 0, 0, 0, 1, 0, 0, -0.342083 )
-bones/1/enabled = true
-bones/1/bound_children = [  ]
-bones/2/name = "brazo_L"
-bones/2/parent = 0
-bones/2/rest = Transform( 0.938009, -0.000240257, -0.346611, -0.346537, -0.0213815, -0.937793, -0.00718573, 0.999771, -0.0201392, 0.8167, -0.285912, -0.326006 )
-bones/2/enabled = true
-bones/2/bound_children = [  ]
-bones/3/name = "brazo_R"
-bones/3/parent = 0
-bones/3/rest = Transform( 0.938009, 0.000240257, 0.346611, 0.346537, -0.0213815, -0.937793, 0.00718573, 0.999771, -0.0201392, -0.8167, -0.285912, -0.326006 )
-bones/3/enabled = true
-bones/3/bound_children = [  ]
-bones/4/name = "brazo_R.001"
-bones/4/parent = 0
-bones/4/rest = Transform( 0, 0, -1, 1, -4.37114e-008, 0, -4.37114e-008, -1, 0, -0.8167, -0.285912, -0.326006 )
-bones/4/enabled = true
-bones/4/bound_children = [  ]
-bones/5/name = "brazo_L.001"
-bones/5/parent = 0
-bones/5/rest = Transform( 0, 0, 1, -1, -4.37114e-008, 0, 4.37114e-008, -1, 0, 0.8167, -0.285912, -0.326006 )
-bones/5/enabled = true
-bones/5/bound_children = [  ]
 
-[node name="DRONE_unido" type="MeshInstance" parent="Armature/Skeleton"]
+[node name="DRONE_unido" parent="Armature/Skeleton" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00510684, 0, 0.000822425 )
+
 mesh = SubResource( 1 )
 "blend_shapes/Key 1" = 0.0
 "blend_shapes/Key 2" = 0.0
@@ -411,9 +387,11 @@ anims/Giro-bracitos = SubResource( 5 )
 anims/Levitate = SubResource( 6 )
 anims/Shot = SubResource( 7 )
 
-[node name="OmniLight" type="OmniLight" parent="."]
+
+[node name="OmniLight" type="OmniLight" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96283, 0 )
 light_energy = 2.0
+
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 8 )
@@ -432,3 +410,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.15, -0.5 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="laser_timer" to="." method="_on_laser_timer_timeout"]
+
