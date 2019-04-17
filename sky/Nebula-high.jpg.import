@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Nebula-panorama.png-1666f34ef857ff0e52be0cf5717ac6fc.stex"
+path="res://.import/Nebula-high.jpg-230b6035902188d97dabd11bca80eafb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sky/Nebula-panorama.png"
-dest_files=[ "res://.import/Nebula-panorama.png-1666f34ef857ff0e52be0cf5717ac6fc.stex" ]
+source_file="res://sky/Nebula-high.jpg"
+dest_files=[ "res://.import/Nebula-high.jpg-230b6035902188d97dabd11bca80eafb.stex" ]
 
 [params]
 
