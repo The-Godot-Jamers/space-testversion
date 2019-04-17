@@ -14,5 +14,6 @@ func _process(delta):
 		visible = false
 	else:
 		visible = true
+	$MeshInstance.get_surface_material(0).set_emission_energy(2/get_parent().translation.distance_to(closest.translation))
 	look_at(closest.translation, Vector3(0.0, 1.0, 0.0))
 	closest = null

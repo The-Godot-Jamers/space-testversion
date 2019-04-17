@@ -1,105 +1,70 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Hancking_Game/Avatars/Player2D.gd" type="Script" id=1]
-[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip1.png" type="Texture" id=2]
-[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip2.png" type="Texture" id=3]
-[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip2AI.png" type="Texture" id=4]
-[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip3.png" type="Texture" id=5]
-[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/Turret1.png" type="Texture" id=6]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip1AI.png" type="Texture" id=2]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip2AI.png" type="Texture" id=3]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/PShip3AI.png" type="Texture" id=4]
+[ext_resource path="res://Hancking_Game/Assets/Hack Avatars/Turret1AI.png" type="Texture" id=5]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+
+
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "default",
-"speed": 8.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "New Anim",
-"speed": 5.0
+"speed": 4.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=4]
 
 animations = [ {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [node name="Player2D" type="KinematicBody2D"]
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-motion/sync_to_physics = false
 script = ExtResource( 1 )
-_sections_unfolded = [ "Script" ]
-Bullet = null
-speed = null
-rotation_speed = null
-gun_cooldown = null
-health = null
+max_speed = 500
+rotation_speed = 1.0
+gun_cooldown = 12.0
+health = 12
+
+[node name="Player2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+rotation = 1.57175
+scale = Vector2( 9.26266, 7.0038 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 1.57175
-frames = SubResource( 1 )
-animation = "default"
+frames = SubResource( 2 )
 frame = 3
 playing = true
-_sections_unfolded = [ "frames" ]
 
 [node name="HPBody" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Turret" type="AnimatedSprite" parent="."]
-position = Vector2( -52.8758, 0.145382 )
-rotation = 1.57413
+position = Vector2( -51.5291, -2.02039 )
+rotation = -0.000715166
 scale = Vector2( 0.550648, 0.550648 )
-frames = SubResource( 3 )
-animation = "default"
-offset = Vector2( 0, -30 )
-_sections_unfolded = [ "Script", "frames" ]
+frames = SubResource( 4 )
+offset = Vector2( 27.9183, 3.28377 )
 
 [node name="Muzzle" type="Position2D" parent="Turret"]
-position = Vector2( 0.12955, -137.888 )
+position = Vector2( 155.095, 2.23505 )
 
 [node name="GunTimer" type="Timer" parent="."]
-process_mode = 1
-wait_time = 1.0
-one_shot = false
 autostart = true
-_sections_unfolded = [ "Script" ]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 1
-rotating = false
 current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
 
