@@ -1,5 +1,4 @@
-extends "res://Hancking_Game/Bullets/Bullet.tscn"
-
+extends "res://Hancking_Game/Bullets/Area2D.gd"
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
