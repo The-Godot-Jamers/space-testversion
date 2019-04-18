@@ -4,6 +4,10 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/rusty-panel-roughness3b.png-47abb24ac52e53005568f0699d773e4a.s3tc.stex"
 path.etc2="res://.import/rusty-panel-roughness3b.png-47abb24ac52e53005568f0699d773e4a.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
 
 [deps]
 
