@@ -14,7 +14,7 @@ func fire():
 func _physics_process(delta):
 	if was_shot:
 		translation -= forward * speed * delta
-
+#warning-ignore:unused_argument
 func _on_Area_body_entered(body):
 	if active:
 		was_shot = false

@@ -22,7 +22,7 @@ func _input(event):
 	elif event.is_action_pressed("zoomout"):
 		$Tween.interpolate_property(self,"translation", translation, Vector3(translation.x, translation.y, translation.z + zoom_value), 0.1, Tween.TRANS_LINEAR,Tween.EASE_IN_OUT) 
 		$Tween.start()
-
+#warning-ignore:unused_argument
 func _process(delta):
 	if mouse_position:
 		mouse_position *= sensitivity

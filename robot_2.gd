@@ -2,11 +2,11 @@ extends KinematicBody
 
 var piupiu = preload("res://piupiu_laser.tscn")
 var target
-var move_speed = 5
+var move_speed = 4
 var velocity = Vector3()
-var accel = 3
+var accel = 2
 #var rot_speed = 2
-var hitpoints = 10
+var hitpoints = 15
 
 func take_hit(amt):
 	hitpoints -= amt
@@ -38,19 +38,12 @@ func _physics_process(delta):
 func _on_laser_timer_timeout():
 	if translation.distance_to(target.translation) < 20:
 		var laser = piupiu.instance()
-		laser.translation = to_global($piupiu_left.translation)
+		laser.translation = to_global($cannon.translation)
 		laser.shooter = self
 		laser.rotation.y = rotation.y - deg2rad(180)
 		get_parent().add_child(laser)
 		
-		laser = piupiu.instance()
-		laser.translation = to_global($piupiu_right.translation)
-		laser.shooter = self
-		laser.rotation.y = rotation.y - deg2rad(180)
-		get_parent().add_child(laser)
-		
-		
-		$AnimationPlayer.play("Shot")
+		$AnimationPlayer.play("Shot-V")
 
 #warning-ignore:unused_argument
 func _on_AnimationPlayer_animation_finished(anim_name):

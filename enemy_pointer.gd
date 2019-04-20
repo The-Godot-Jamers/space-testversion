@@ -1,7 +1,7 @@
 extends Position3D
 
 var closest = null
-
+#warning-ignore:unused_argument
 func _process(delta):
 	var group = get_tree().get_nodes_in_group("enemy")
 	for i in group:
