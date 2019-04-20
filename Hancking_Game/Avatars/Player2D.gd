@@ -1,5 +1,5 @@
 extends "res://Hancking_Game/Avatars/Tank.gd"
-
+#1262019 Missing Export Varables 
 #change inputs to test something
 func control(delta):
 	$Turret.look_at (get_global_mouse_position())
@@ -17,3 +17,8 @@ func control(delta):
 		velocity /= 2.0
 	position.x = clamp (position.x, $Camera2D.limit_left, $Camera2D.limit_right)
 	position.y = clamp (position.y, $Camera2D.limit_top, $Camera2D.limit_bottom)
+	if Input.is_action_just_pressed('click'):
+		shoot()
+
+	#func _on_Tank_shoot():
+#	pass # Replace with function body.

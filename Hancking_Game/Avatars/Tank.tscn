@@ -32,11 +32,15 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Player2D" type="KinematicBody2D"]
+[node name="Tank" type="KinematicBody2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+max_speed = 50
+rotation_speed = 50.0
+gun_cooldown = 50.0
+health = 50
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )

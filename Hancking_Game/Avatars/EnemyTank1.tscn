@@ -37,6 +37,7 @@ animations = [ {
 
 
 [node name="EnemyTank1" type="KinematicBody2D"]
+collision_layer = 3
 script = ExtResource( 1 )
 max_speed = 0
 health = 100
@@ -46,7 +47,7 @@ detect_radius = 400
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 1.57175
 frames = SubResource( 1 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="DetectRadius" type="Area2D" parent="."]
