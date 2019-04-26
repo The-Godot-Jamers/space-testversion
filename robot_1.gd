@@ -2,7 +2,7 @@ extends KinematicBody
 
 var piupiu = preload("res://piupiu_laser.tscn")
 var target
-var move_speed = 5
+var move_speed = 500
 var velocity = Vector3()
 var accel = 3
 #var rot_speed = 2
@@ -27,7 +27,7 @@ func _physics_process(delta):
 		var heading = get_global_transform().basis
 		direction -= heading.z
 		direction = direction.normalized()
-		var target_move = direction * move_speed
+		var target_move = direction * move_speed * delta
 		velocity = velocity.linear_interpolate(target_move,accel * delta)
 		velocity.y = 0
 		velocity = move_and_slide(velocity)
